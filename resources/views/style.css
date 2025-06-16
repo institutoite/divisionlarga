@@ -1,0 +1,11 @@
+.resaltado-operacion {
+    background: #ff4d4d !important;
+    color: #fff !important;
+    font-weight: bold;
+}
+ 
+.resaltado-dividendo { background: #3498db !important; color: #fff !important; font-weight: bold; }
+.resaltado-divisor { background: #e67e22 !important; color: #fff !important; font-weight: bold; }
+.resaltado-cociente { background: #27ae60 !important; color: #fff !important; font-weight: bold; }
+.resaltado-residuo { background: #9b59b6 !important; color: #fff !important; font-weight: bold; }
+.resaltado-bajada { background: #e74c3c !important; color: #fff !important; font-weight: bold; } 
