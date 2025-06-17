@@ -98,12 +98,12 @@
             <div class="input-group">
                 <div class="input-field dividendo">
                     <label for="dividendo">Dividendo</label>
-                    <input type="number" id="dividendo" placeholder="Ej:1234" value="4565" min="1">
+                    <input type="number" id="dividendo" placeholder="Ingrese dividendo" min="1">
                     <div class="error-container"></div>
                 </div>
                 <div class="input-field divisor">
                     <label for="divisor">Divisor</label>
-                    <input type="number" id="divisor" placeholder="Ej:5" value="2" min="1">
+                    <input type="number" id="divisor" placeholder="ingrese divisor" min="1">
                     <div class="error-container"></div>
                 </div>
                 <button id="iniciar-btn" class="btn-iniciar">Iniciar</button>
