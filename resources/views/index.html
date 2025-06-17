@@ -3,98 +3,101 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculadora de División Larga - Método Alcanzar</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>División Larga - Calculadora Paso a Paso</title>
+    <link href="{{ asset('css/styles.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/header.css') }}" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="container">
-        <!-- Header con logotipo -->
-        <header class="header">
-            <div class="logo">
-                <div class="logo-icon">÷</div>
-                <div class="logo-text">División Larga</div>
+    <!-- Header -->
+    @include('partials.header')
+    
+    <!-- Main Content -->
+    <main class="main-container">
+        <!-- 1. Panel de entrada -->
+        <section class="input-panel">
+            <div class="panel-header">
+                <h2 class="panel-title">Calculadora de División Larga</h2>
+                <p class="panel-subtitle">Ingresa los números para comenzar el proceso paso a paso</p>
             </div>
-            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=60&h=60&fit=crop&crop=face" 
-                 alt="Optimismo" 
-                 class="optimism-image">
-        </header>
-
-        <!-- Panel de entrada -->
-        <div class="input-panel">
-            <h2>Calculadora de División Larga</h2>
-            <div class="input-group">
-                <div class="input-field dividendo">
-                    <label for="dividendo">Dividendo</label>
-                    <input type="number" id="dividendo" placeholder="Ej:1234" min="1">
-                    <div class="error-container"></div>
+            
+            <div class="input-section">
+                <div class="input-group">
+                    <div class="input-field dividendo">
+                        <label for="dividendo" class="input-label">Dividendo</label>
+                        <input type="number" id="dividendo" class="number-input" placeholder="Ej: 1234" min="1" autocomplete="off">
+                        <div class="error-container"></div>
+                    </div>
+                    
+                    <div class="input-field divisor">
+                        <label for="divisor" class="input-label">Divisor</label>
+                        <input type="number" id="divisor" class="number-input" placeholder="Ej: 5" min="1" autocomplete="off">
+                        <div class="error-container"></div>
+                    </div>
+                    
+                    <button id="iniciar-btn" class="btn-iniciar">
+                        <span class="btn-icon">▶</span>
+                        <span class="btn-text">Iniciar</span>
+                    </button>
                 </div>
-                <div class="input-field divisor">
-                    <label for="divisor">Divisor</label>
-                    <input type="number" id="divisor" placeholder="Ej:5" min="1">
-                    <div class="error-container"></div>
-                </div>
-                <button id="iniciar-btn" class="btn-iniciar">Iniciar</button>
+                
+                <!-- Contenedor para alertas personalizadas -->
+                <div id="alert-container" class="alert-container"></div>
             </div>
-            <!-- Contenedor para alertas personalizadas -->
-            <div id="alert-container" class="alert-container"></div>
-        </div>
+        </section>
 
-      
-
-        <!-- Panel de control (botones en la parte superior) -->
-       
-
-        <!-- Panel de división -->
-        <div id="division-grid" class="division-grid">
-            <div id="control-panel" class="control-panel" style="display: none;">
-                <button id="reiniciar-btn" class="control-btn btn-reiniciar">
+        <!-- 2. Panel de controles de división -->
+        <section id="control-section" class="control-section" style="display: none;">
+            <div id="control-panel" class="control-panel">
+                <button id="reiniciar-btn" class="control-btn btn-reiniciar" title="Reiniciar cálculo">
+                    <span class="btn-icon">🔄</span>
                     <span class="btn-text">Reiniciar</span>
                 </button>
-                <button id="atras-btn" class="control-btn btn-atras">
+                
+                <button id="atras-btn" class="control-btn btn-atras" title="Paso anterior">
+                    <span class="btn-icon">⬅</span>
                     <span class="btn-text">Atrás</span>
                 </button>
-                <button id="siguiente-btn" class="control-btn btn-siguiente">
+                
+                <button id="siguiente-btn" class="control-btn btn-siguiente" title="Siguiente paso">
+                    <span class="btn-icon">➡</span>
                     <span class="btn-text">Siguiente</span>
                 </button>
-                <button id="resolver-todo-btn" class="control-btn btn-resolver-todo">
+                
+                <button id="resolver-todo-btn" class="control-btn btn-resolver-todo" title="Resolver automáticamente">
+                    <span class="btn-icon">⚡</span>
                     <span class="btn-text">Resolver Todo</span>
                 </button>
             </div>
+        </section>
+
+        <!-- 3. Grid Container y Panel de Explicación -->
+        <section id="division-content" class="division-content" style="display: none;">
+            <!-- Grid Container (no modificado) -->
+            <div class="grid-section">
+                <div class="grid-container">
+                    <!-- La cuadrícula se generará dinámicamente aquí -->
+                </div>
+            </div>
             
-            <div class="grid-container">
-                <!-- La cuadrícula se generará dinámicamente aquí -->
-            </div>
-        </div>
-
-        <!-- Panel de explicación (parte inferior) -->
-        <div id="explanation-panel" class="explanation-panel" style="display: none;">
-            <div class="explanation-content">
-                <div id="explanation-line-1" class="explanation-line"></div>
-                <div id="explanation-line-2" class="explanation-line"></div>
-                <div id="explanation-line-3" class="explanation-line"></div>
-            </div>
-        </div>
-
-        <!-- Panel de resultado final -->
-        <div id="result-panel" class="result-panel">
-            <h3>Resultado Final</h3>
-            <div class="result-content">
-                <div class="result-item">
-                    <h4>Cociente</h4>
-                    <div id="final-cociente" class="value">-</div>
+            <!-- 4. Panel de explicación -->
+            <div id="explanation-panel" class="explanation-panel">
+                <div class="explanation-header">
+                    <h3 class="explanation-title">Explicación del Paso</h3>
                 </div>
-                <div class="result-item">
-                    <h4>Residuo</h4>
-                    <div id="final-residuo" class="value">-</div>
-                </div>
-                <div class="result-item">
-                    <h4>Verificación</h4>
-                    <div id="final-verificacion" class="value">-</div>
+                <div class="explanation-content">
+                    <div id="explanation-line-1" class="explanation-line"></div>
+                    <div id="explanation-line-2" class="explanation-line"></div>
+                    <div id="explanation-line-3" class="explanation-line"></div>
                 </div>
             </div>
-        </div>
-    </div>
+        </section>
+    </main>
 
-    <script src="script.js"></script>
+    <!-- Scripts -->
+    <script src="{{ asset('js/header.js') }}"></script>
+    <script src="{{ asset('js/script.js') }}"></script>
 </body>
 </html>

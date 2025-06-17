@@ -295,14 +295,14 @@ class DivisionCalculator {
             }
         }
 
-        const spanDividendo = `<span class='resaltado-dividendo'>${dividendoParcialExplicacion}</span>`;
-        const spanDivisor = `<span class='resaltado-divisor'>${step.divisor}</span>`;
-        const spanCociente = `<span class='resaltado-cociente'>${cocientePaso}</span>`;
-        const spanProducto = `<span class='resaltado-residuo'>${productoExplicacion}</span>`; 
-        const spanResiduo = `<span class='resaltado-residuo'>${residuoExplicacion}</span>`;
-        const spanBajada = digitoBajado ? `<span class='resaltado-bajada'>${digitoBajado}</span>` : '';
+        const spanDividendo = `<span class='redondear resaltado-dividendo'>${dividendoParcialExplicacion}</span>`;
+        const spanDivisor = `<span class='redondear resaltado-divisor'>${step.divisor}</span>`;
+        const spanCociente = `<span class='redondear resaltado-cociente'>${cocientePaso}</span>`;
+        const spanProducto = `<span class='redondear resaltado-residuo'>${productoExplicacion}</span>`; 
+        const spanResiduo = `<span class='redondear resaltado-residuo'>${residuoExplicacion}</span>`;
+        const spanBajada = digitoBajado ? `<span class='redondear resaltado-bajada'>${digitoBajado}</span>` : '';
 
-        explicacionLinea1 = `<strong>Paso ${this.currentStep + 1}:</strong> Buscamos un número que multiplicado por ${spanDivisor} se acerque o iguale a ${spanDividendo}`;
+        explicacionLinea1 = `<strong>Paso ${this.currentStep + 1}:</strong> Buscamos un número que multiplicado por ${spanDivisor} sea menor o igual que ${spanDividendo}`;
         
         if (step.cocienteDigitForStep === '0' && step.productForStep === 0) {
             explicacionLinea2 = `<em>El dividendo parcial ${spanDividendo} es menor que el divisor ${spanDivisor}.</em>`;
@@ -315,12 +315,12 @@ class DivisionCalculator {
             explicacionLinea2 = `<em>Se baja la siguiente cifra: ${spanBajada}</em>`;
             explicacionLinea3 = `<em>Nuevo dividendo parcial: ${spanDividendo}</em>`;
         } else {
-            explicacionLinea2 = `<em>${spanCociente} × ${spanDivisor} = ${spanProducto}</em>`;
-            explicacionLinea3 = `<em>Residuo: ${spanResiduo}</em>`;
+            explicacionLinea2 = `<em>tenemos ${spanCociente} × ${spanDivisor} = ${spanProducto} al ${spanDividendo} falta ${spanResiduo}</em>`;
+            // explicacionLinea3 = `<em>Residuo: ${spanResiduo}</em>`;
             if (digitoBajado) {
-                explicacionLinea3 += `<br><em>Se baja la siguiente cifra: ${spanBajada}</em>`; 
+                explicacionLinea3 += `<em>Se baja la siguiente cifra: ${spanBajada}</em>`; 
             } else {
-                explicacionLinea3 += `<br><em>Fin de la división</em>`;
+                explicacionLinea3 += `<em>Fin de la división</em>`;
             }
         }
         
