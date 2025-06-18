@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <link rel="icon" href="{{ asset('images/ite.ico') }}" type="image/x-icon">
     <title>itesolve</title>
     <link rel="stylesheet" href="{{  asset('css/styles.css')}}">
@@ -12,6 +13,7 @@
     <link rel="stylesheet" href="{{ asset('css/fundador.css') }}">
     <link rel="stylesheet" href="{{ asset('css/redes.css') }}">
     <link rel="stylesheet" href="{{ asset('css/unete.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/autor.css') }}">
     <!-- Font Awesome para iconos -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- CSS de Slick -->
@@ -90,9 +92,9 @@
                 </li>
             </ul>
             <div class="mobile-author-section">
-                <img src="{{ asset('images/author.jpg') }}" alt="Autor" class="mobile-author-avatar">
+                <img src="{{ asset('images/david.png') }}" alt="Autor" class="mobile-author-avatar">
                 <div class="mobile-author-details">
-                    <span class="mobile-author-name">Creado por Desarrollador</span>
+                    <span class="mobile-author-name">Creado por David Flores</span>
                     <span class="mobile-author-title">Especialista en Educación Digital</span>
                 </div>
             </div>
@@ -322,32 +324,63 @@
     {{-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  servicios %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% --}}
 
 
-    <section id="autor" class="fundador-section">
-        <div class="fundador-container">
-            <div class="fundador-foto">
-                <!-- Reemplaza con tu foto -->
-                <div class="fundador-foto">
-                    <div class="marco-foto">
-                        <img src="{{ asset('images/david.png') }}" alt="David Flores - Fundador" class="foto-perfil">
-                    </div>
+
+
+    <section class="author-section">
+    <div class="author-container">
+        <div class="author-content">
+            <!-- Imagen del autor -->
+            <div class="author-image-container">
+                <img src="{{ asset('images/david.png') }}" alt="David Flores - Desarrollador y Educador" class="author-image">
+                <div class="author-badge">
+                    <span class="badge-icon">🚀</span>
+                </div>
+            </div>
+            
+            <!-- Información del autor -->
+            <div class="author-info">
+                <div class="author-header">
+                    <h3 class="author-name">David Flores</h3>
+                    <p class="author-title">Desarrollador & Educador Tecnológico</p>
                 </div>
                 
-            </div>
-            <div class="fundador-info">
-                <h2 class="fundador-titulo">David Flores</h2>
-                <p class="fundador-descripcion">
-                    Creador de proyectos informáticos y apasionado por la educación tecnológica. 
-                    Especialista en robótica educativa, desarrollo de software y creación de contenido 
-                    digital para redes sociales.
-                </p>
-                <a href="https://www.tiktok.com/@davidflores.ite" target="_blank" class="tiktok">
-                    <div class="social-icon">
-                        <i class="fab fa-tiktok"></i>
-                    </div>
-                </a>
+                <div class="author-description">
+                    <p class="description-text">
+                        Creador de proyectos informáticos y apasionado por la educación tecnológica. 
+                        Especialista en robótica educativa, desarrollo de software y creación de 
+                        contenido digital para redes sociales.
+                    </p>
+                </div>
+                
+                <!-- Especialidades -->
+                <div class="author-skills">
+                    <span class="skill-tag">🤖 Robótica Educativa</span>
+                    <span class="skill-tag">💻 Desarrollo de Software</span>
+                    <span class="skill-tag">📱 Contenido Digital</span>
+                    <span class="skill-tag">🎓 Educación Tecnológica</span>
+                </div>
+                
+                <!-- Botón de contacto -->
+                <div class="author-contact">
+                    <a href="#" id="whatsapp-contact" class="whatsapp-btn" target="_blank" rel="noopener noreferrer">
+                        <span class="whatsapp-icon">📱</span>
+                        <span class="whatsapp-text">Contactar por WhatsApp</span>
+                        <span class="whatsapp-arrow">→</span>
+                    </a>
+                </div>
             </div>
         </div>
-    </section>
+        
+        <!-- Decoración de fondo -->
+        <div class="author-decoration">
+            <div class="decoration-circle circle-1"></div>
+            <div class="decoration-circle circle-2"></div>
+            <div class="decoration-circle circle-3"></div>
+        </div>
+    </div>
+</section>
+
+
 
 
 
@@ -566,6 +599,7 @@
 
     <script src="{{ asset('js/script.js') }}"></script>
     <script src="{{ asset('js/header.js') }}"></script>
+    <script src="{{ asset('js/autor.js') }}"></script>
     
     <script>
 
