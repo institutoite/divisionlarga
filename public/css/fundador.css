@@ -1,0 +1,113 @@
+.fundador-section {
+    background-color: #f8f9fa;
+    padding: 3rem 0;
+    margin: 2rem 0;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+    border-radius: 15px;;
+}
+
+.fundador-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.fundador-foto {
+    flex: 0 0 280px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.marco-foto {
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    padding: 8px;
+    background: linear-gradient(135deg, #375F7A 0%, #2C3E50 100%);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+    animation: rotate-border 8s linear infinite;
+}
+
+.foto-perfil {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid white;
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.1);
+    transition: transform 0.5s ease;
+}
+
+.foto-perfil:hover {
+    transform: scale(1.03);
+}
+
+@keyframes rotate-border {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Para versión móvil */
+@media (max-width: 768px) {
+    .marco-foto {
+        width: 180px;
+        height: 180px;
+    }
+}
+.fundador-info {
+    flex: 1;
+}
+
+.fundador-titulo {
+    color: #2C3E50;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.fundador-nombre {
+    color: #27AE60;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.fundador-descripcion {
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.fundador-redes {
+    display: flex;
+    gap: 1rem;
+}
+
+.red-social {
+    color: #2C3E50;
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.red-social:hover {
+    color: #27AE60;
+    transform: translateY(-3px);
+}
+
+@media (max-width: 768px) {
+    .fundador-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .fundador-foto {
+        flex: 0 0 200px;
+    }
+    
+    .fundador-redes {
+        justify-content: center;
+    }
+}
