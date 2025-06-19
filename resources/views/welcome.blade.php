@@ -600,6 +600,7 @@
     <script src="{{ asset('js/script.js') }}"></script>
     <script src="{{ asset('js/header.js') }}"></script>
     <script src="{{ asset('js/autor.js') }}"></script>
+    <script src="{{ asset('js/typewriter.js') }}"></script>
     
     <script>
 
@@ -648,18 +649,7 @@
         });
 
         
-        // document.addEventListener('DOMContentLoaded', () => {
-        //     const whatsappLinks = document.querySelectorAll('.whatsapp-link');
-        //     const numeroWhatsApp = '59160902299'; // Número destino (sin +)
-          
-        //     whatsappLinks.forEach(link => {
-        //         link.addEventListener('click', (e) => {
-        //             e.preventDefault();
-        //             const mensaje = encodeURIComponent(link.dataset.msg);
-        //             window.open(`https://wa.me/${numeroWhatsApp}?text=${mensaje}`, '_blank');
-        //         });
-        //     });
-        // });
+       
         
         function enviarWhatsApp(event) {
             event.preventDefault();
